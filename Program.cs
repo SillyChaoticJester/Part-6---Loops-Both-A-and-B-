@@ -54,11 +54,26 @@
 
             //Part 6b. Conditonal While Loops
 
-            int i = 1;
-            while (i <= 10)
+            int i = 10;
+            while (i >= 2)
             {
                 Console.WriteLine(i);
-                i++;
+                i = i - 2;
+            }
+
+            int number;
+            string answer;
+
+            Console.WriteLine("Please enter an integer:");
+            while (!Int32.TryParse(Console.ReadLine(), out number))
+                Console.WriteLine("Invalid Integer, please try again!");
+            Console.WriteLine($"Thans for {number}");
+            Console.WriteLine();
+            
+            while (answer != "batman")
+            {
+                Console.WriteLine("What is Bruce Wayne's alter ego?");
+                answer = Console.ReadLine().ToLower();
             }
 
         }
