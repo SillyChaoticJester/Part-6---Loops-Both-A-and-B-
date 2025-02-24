@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            //To remember: Crtl + K + C to comment out things
+
             //Part 6a - Counted Loops
 
             //for (int i = 0; i < 10; i = i + 2)
@@ -54,26 +56,57 @@
 
             //Part 6b. Conditonal While Loops
 
-            int i = 10;
-            while (i >= 2)
-            {
-                Console.WriteLine(i);
-                i = i - 2;
-            }
+            //int i = 10;
+            //while (i >= 2)
+            //{
+            //    Console.WriteLine(i);
+            //    i = i - 2;
+            //}
 
-            int number;
-            string answer;
+            //int number;
+            //string answer;
 
-            Console.WriteLine("Please enter an integer:");
-            while (!Int32.TryParse(Console.ReadLine(), out number))
-                Console.WriteLine("Invalid Integer, please try again!");
-            Console.WriteLine($"Thans for {number}");
-            Console.WriteLine();
-            
-            while (answer != "batman")
+            //Console.WriteLine("Please enter an integer:");
+            //while (!Int32.TryParse(Console.ReadLine(), out number))
+            //    Console.WriteLine("Invalid Integer, please try again!");
+            //Console.WriteLine($"Thanks for {number}");
+            //Console.WriteLine();
+
+            //while (answer != "batman")
+            //{
+            //    Console.WriteLine("What is Bruce Wayne's alter ego?");
+            //    answer = Console.ReadLine().ToLower();
+            //}
+
+            int guesses, secretNum, userGuess;
+            secretNum = 4;
+            guesses = 0;
+            bool done = false;
+            while (!done)
             {
-                Console.WriteLine("What is Bruce Wayne's alter ego?");
-                answer = Console.ReadLine().ToLower();
+                Console.WriteLine("Guess a Number from 1-10, or -1 to Quit");
+                while (!Int32.TryParse(Console.ReadLine(), out userGuess))
+                    Console.WriteLine("Invalid integer, please try again.");
+                guesses++;
+                if (userGuess == secretNum)
+                {
+                    done = true;
+                    Console.WriteLine("You Win!");
+                }
+                else if (userGuess == -1)
+                {
+                    done = true;
+                    Console.WriteLine("Alright, bye bye!");
+                }
+                else if (guesses >= 5)
+                {
+                    done = true;
+                    Console.WriteLine("Oops! You ran out of Guesses! You lose!");
+                }
+                else
+                {
+                    Console.WriteLine("Incorrect! Try Again!");
+                }
             }
 
         }
