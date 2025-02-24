@@ -78,36 +78,64 @@
             //    answer = Console.ReadLine().ToLower();
             //}
 
-            int guesses, secretNum, userGuess;
-            secretNum = 4;
-            guesses = 0;
-            bool done = false;
-            while (!done)
+            //int guesses, secretNum, userGuess;
+            //secretNum = 4;
+            //guesses = 0;
+            //bool done = false;
+            //while (!done)
+            //{
+            //    Console.WriteLine("Guess a Number from 1-10, or -1 to Quit");
+            //    while (!Int32.TryParse(Console.ReadLine(), out userGuess))
+            //        Console.WriteLine("Invalid integer, please try again.");
+            //    guesses++;
+            //    if (userGuess == secretNum)
+            //    {
+            //        done = true;
+            //        Console.WriteLine("You Win!");
+            //    }
+            //    else if (userGuess == -1)
+            //    {
+            //        done = true;
+            //        Console.WriteLine("Alright, bye bye!");
+            //    }
+            //    else if (guesses >= 5)
+            //    {
+            //        done = true;
+            //        Console.WriteLine("Oops! You ran out of Guesses! You lose!");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Incorrect! Try Again!");
+            //    }
+            //}
+
+            //int bet, wallet = 100;
+            //bet = 0;
+            //Console.WriteLine("How much do you want to bet? You have $" + wallet);
+            //while (!Int32.TryParse(Console.ReadLine(), out bet))
+            //    Console.WriteLine("Invalid integer, please try again.");
+            //while (bet > wallet)
+            //{
+            //    Console.WriteLine("That is more than what you have, please enter a valid amount:");
+            //    while (!Int32.TryParse(Console.ReadLine(), out bet))
+            //        Console.WriteLine("Invalid integer, please try again.");
+            //}
+            //while (bet < 0)
+            //{
+            //    Console.WriteLine("That's not a real amount of money, please enter a valid amount:");
+            //    while (!Int32.TryParse(Console.ReadLine(), out bet))
+            //        Console.WriteLine("Invalid integer, please try again.");
+            //}
+
+            string selection;
+            do
             {
-                Console.WriteLine("Guess a Number from 1-10, or -1 to Quit");
-                while (!Int32.TryParse(Console.ReadLine(), out userGuess))
-                    Console.WriteLine("Invalid integer, please try again.");
-                guesses++;
-                if (userGuess == secretNum)
-                {
-                    done = true;
-                    Console.WriteLine("You Win!");
-                }
-                else if (userGuess == -1)
-                {
-                    done = true;
-                    Console.WriteLine("Alright, bye bye!");
-                }
-                else if (guesses >= 5)
-                {
-                    done = true;
-                    Console.WriteLine("Oops! You ran out of Guesses! You lose!");
-                }
-                else
-                {
-                    Console.WriteLine("Incorrect! Try Again!");
-                }
-            }
+                Console.WriteLine("Who is the better captain?");
+                Console.WriteLine("a - Captain Picard");
+                Console.WriteLine("b - Captain Kirk");
+                selection = Console.ReadLine();
+            } while (selection != "a");
+            Console.WriteLine("Correct!");
 
         }
     }
