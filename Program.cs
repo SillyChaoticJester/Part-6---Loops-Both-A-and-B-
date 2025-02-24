@@ -127,16 +127,46 @@
             //        Console.WriteLine("Invalid integer, please try again.");
             //}
 
-            string selection;
-            do
-            {
-                Console.WriteLine("Who is the better captain?");
-                Console.WriteLine("a - Captain Picard");
-                Console.WriteLine("b - Captain Kirk");
-                selection = Console.ReadLine();
-            } while (selection != "a");
-            Console.WriteLine("Correct!");
+            //string selection;
+            //do
+            //{
+            //    Console.WriteLine("Who is the better captain?");
+            //    Console.WriteLine("a - Captain Picard");
+            //    Console.WriteLine("b - Captain Kirk");
+            //    selection = Console.ReadLine();
+            //} while (selection != "a");
+            //Console.WriteLine("Correct!");
 
+            //Practice:
+
+            int userGuess, guesses;
+            guesses = 0;
+            bool done = false;
+            while (!done)
+            {
+                Console.WriteLine("Out of the Four Ninja Turtles, which one is the best?");
+                Console.WriteLine("1. Leonardo");
+                Console.WriteLine("2. Raphael");
+                Console.WriteLine("3. Donatello");
+                Console.WriteLine("4. Michelangelo");
+                while (!Int32.TryParse(Console.ReadLine(), out userGuess))
+                    Console.WriteLine("Invalid Integer, please try again.");
+                guesses++;
+                if (userGuess == 3)
+                {
+                    done = true;
+                    Console.WriteLine("Correct!");
+                }
+                else if (guesses >= 4)
+                {
+                    done = true;
+                    Console.WriteLine("Oops! You ran out of guesses! Oh well...");
+                }
+                else
+                {
+                     Console.WriteLine("Incorrect! Try Again!");
+                }
+            }
         }
     }
 }
